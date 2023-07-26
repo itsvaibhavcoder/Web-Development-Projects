@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course registration</title>
+    <style>
+      input, lable, select{
+        margin:10px;
+        padding: 5px;
+
+      }  
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+</head>
+<body>
+    <div class="register">
+        <h1 >Course Registration</h1>
+        <div class="maindiv">
+            
+            <form onsubmit="display();return false">
+                <input type="text" placeholder="firstname" id="firstname"> <br>
+                <input type="text" placeholder="lastname" id="lastname"> <br>
+               
+                <lable>Gender</lable>
+                <input type="radio" name="gender" value="male">Male 
+                <input type="radio" name="gender" value="female">Female 
+                <br>
+                <label>Select Langauge</label>
+                <select id="langauge">
+                    <option value="javascript">Javascript</option>
+                    <option value="Pyhton">Python</option>
+                    <option value="Ruby">Ruby</option>
+                </select>
+                <br>
+                <label>Select Platform</label>
+                <input type="checkbox" value="online" id="online">Online
+                <input type="checkbox" value="offline" id="offline">Offline
+                 <br>
+                <input type="submit" class="btn">
+        
+            </form>
+            <p id="result"></p>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+
+<script>
+function display(){
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    var langauge = document.getElementById("langauge").value;
+    var online = document.getElementById("online")
+    var offline = document.getElementById("offline")
+    var genders = document.getElementsByName("gender")
+    var gender;
+    for(var i=0; i<genders.length; i++){
+        if(genders[i].checked){
+            gender=genders[i].value
+        }
+    }
+    var platforms =[];
+    if(online.checked){
+        platforms.push(online.value)
+    }
+    if(offline.checked){
+        platforms.push(offline.value)
+    }
+   
+    var result = document.getElementById("result")
+
+    result.innerHTML ='Firstname :'+firstname+'<br> lastname :' +lastname+ '<br> Langauge :'+langauge+'<br> Gender : '+gender+'<br> Platforms : '+platforms
+}
+</script>
