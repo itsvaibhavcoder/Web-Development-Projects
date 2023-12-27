@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Container styles */
+.container {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Navbar styles */
+.navbar {
+  flex-basis: 15%;
+  padding: 0;
+  background-color: #e9e9e9;
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out;
+  height: 100vh;
+  float: left;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.navbar:hover::before {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.navbar:hover {
+  width: 25%;
+}
+
+/* Content styles */
+.content {
+  transition: margin-left 0.3s ease-in-out;
+  margin-left: 0;
+  flex-basis: 85%; /* Adjust content size */
+  padding: 20px; /* Add padding */
+}
+
+/* Student form styles */
+.student {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.student form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.student input[type="text"],
+.student input[type="number"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Add margin */
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Styling for buttons */
+.btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add button transition */
+}
+
+.btn-warning {
+  background-color: green;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.td6 button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease; /* Add button transition */
+}
+
+.td6 button:nth-child(1) {
+  background-color: green;
+  color: white;
+}
+
+.td6 button:nth-child(2) {
+  background-color: red;
+  color: white;
+}
+
+/* Navbar and list styles */
+.navbar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar nav ul li.logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav ul li.logo a {
+  text-decoration: none;
+  color: #050505;
+  transition: color 0.3s ease;
+}
+
+.navbar nav ul li .nav-item {
+  font-weight: bold;
+}
+
+.navbar nav ul li.logo a i::before {
+  color: #FFA500;
+  transition: color 0.3s ease;
+}
+
+.navbar nav ul li.logo img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.navbar nav ul li {
+  padding: 15px;
+}
+
+.navbar nav ul li .nav-item {
+  font-weight: bold;
+  color: black;
+}
+.navbar nav ul li a {
+  text-decoration: none;
+  color: #34495e; 
+  transition: color 0.3s ease;
+  margin-left: 10px;
+}
+
+.navbar nav ul li.logo a i::before {
+  color: #e67e22;
+  transition: color 0.3s ease;
+  margin-right: 10px;
+}
+
+
+/* Add a media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
+
+  .navbar {
+    width: 100%; /* Take full width on smaller screens */
+    height: auto; /* Adjust height as per content */
+    margin-bottom: 20px; /* Add space between navbar and content */
+  }
+
+  .content {
+    margin-left: 0; /* Reset margin for content */
+    flex-basis: 100%; /* Take full width */
+    padding: 10px; /* Adjust padding for content */
+    margin-left: 0; /* Reset margin for content */
+  }
+
+  .student {
+    margin-left: 0; /* Reset margin for student div */
+    padding: 10px; /* Adjust padding for student div */
+  }
+
+  .student form input[type="text"],
+  .student form input[type="number"] {
+    width: 100%; /* Adjust input fields to full width */
+  }
+
+  table {
+    width: 100%; /* Adjust table width to full width */
+    margin-left: 0; /* Reset margin for table */
+  }
+}
+
